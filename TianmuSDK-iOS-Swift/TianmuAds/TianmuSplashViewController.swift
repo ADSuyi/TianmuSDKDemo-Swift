@@ -44,6 +44,10 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         
     }
     
+    func tianmuSplashAdDidLoad(_ splashAd: TianmuSplashAd) {
+        
+    }
+    
     func tianmuSplashAdExposured(_ splashAd: TianmuSplashAd) {
         
     }

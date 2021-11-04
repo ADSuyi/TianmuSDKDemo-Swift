@@ -73,6 +73,11 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
         interstitialAd = nil
     }
     
+    func tianmuInterstitialFail(toPresent unifiedInterstitial: TianmuInterstitialAd, error: Error) {
+        print(#function)
+        interstitialAd = nil
+    }
+    
     func tianmuInterstitialDidPresentScreen(_ unifiedInterstitial: TianmuInterstitialAd) {
         
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import AppTrackingTransparency
+import AdSupport
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
@@ -39,13 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
             self.initTianmuSDK()
         }
     }
+    
+   
 
     func initTianmuSDK() {
         
         TianmuSDK.enablePersonalInformation = true
         TianmuSDK.initWithAppId("1001004") { error in
             if (error != nil) {
-                
+               print("初始化失败")
             }
         }
        
@@ -150,6 +153,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
         window?.rootViewController?.present(alertVc, animated: true, completion: nil)
         
     }
+    
+   
     
     func writeAppLoad() {
         let userDefault = UserDefaults.standard
