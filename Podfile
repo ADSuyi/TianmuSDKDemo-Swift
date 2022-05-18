@@ -5,6 +5,5 @@ target 'TianmuSDK-iOS-Swift' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'MJRefresh'
-  pod 'TianmuSDK', :git => 'http://121.41.108.203/adsuyi_code/tianmusdk_beta.git'
-  
+  pod 'TianmuSDK', '~> 1.2.0.1'
 end
