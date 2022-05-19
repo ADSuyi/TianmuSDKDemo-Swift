@@ -133,7 +133,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
         print(#function)
         // 3、展示插屏广告
         if !isNormalAd{
-            self.view.makeToast("当前广告价格：+ Int(unifiedInterstitial.bidPrice())")
+            self.view.makeToast("当前广告价格：\(unifiedInterstitial.bidPrice())")
         }
         isReady = true
         self.view.makeToast("广告准备好")

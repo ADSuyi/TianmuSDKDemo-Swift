@@ -120,7 +120,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
     func tianmuSplashAdSuccessLoad(_ splashAd: TianmuSplashAd) {
         isSucceed = true
         if isHeadBidding {
-            self.view.makeToast("当前广告价格：+ (splashAd.bidPrice())")
+            self.view.makeToast("当前广告价格： \(splashAd.bidPrice())")
         }
     }
     /**
