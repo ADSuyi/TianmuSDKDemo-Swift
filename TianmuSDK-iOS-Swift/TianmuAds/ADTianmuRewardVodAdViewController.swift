@@ -16,6 +16,8 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(red: 225/255.0, green: 233/255.0, blue: 239/255.0, alpha: 1)
+        
         let loadBtn = UIButton.init()
         loadBtn.layer.cornerRadius = 3;
         loadBtn.clipsToBounds = true;
@@ -63,7 +65,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
         bidFailBtn.setTitle("竞价失败", for: .normal)
         bidFailBtn.setTitleColor(UIColor.black, for: .normal)
         self.view.addSubview(bidFailBtn)
-        bidFailBtn.frame = CGRect.init(x: 30, y: 280, width: UIScreen.main.bounds.size.width-60, height: 40)
+        bidFailBtn.frame = CGRect.init(x: 30, y: 340, width: UIScreen.main.bounds.size.width-60, height: 40)
         bidFailBtn.addTarget(self, action: #selector(bidFail), for: .touchUpInside)
     }
     
