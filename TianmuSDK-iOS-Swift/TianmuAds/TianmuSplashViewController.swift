@@ -65,13 +65,13 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         } else {
             bottomViewHeight = SCREEN_HEIGHT - (SCREEN_WIDTH * 960 / 640)
         }
-        let bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
-        bottomView.backgroundColor = UIColor.white
+        bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
+        bottomView?.backgroundColor = UIColor.white
         
         let logoImageView = UIImageView.init(image: UIImage.init(named: "Tianmu_Logo.png"))
         logoImageView.frame = CGRect.init(x: (SCREEN_WIDTH - 135)/2, y: (bottomViewHeight - 46)/2, width: 135, height: 46)
         
-        bottomView.addSubview(logoImageView)
+        bottomView?.addSubview(logoImageView)
        
         // Do any additional setup after loading the view.
        
