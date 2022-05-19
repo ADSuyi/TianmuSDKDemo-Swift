@@ -144,12 +144,21 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     func tianmuInterstitialRenderSuccess(_ unifiedInterstitial: TianmuInterstitialAd) {
         
     }
+    
+    /**
+     *  插屏广告视图展示成功回调
+     *  插屏广告展示成功回调该函数
+     */
+    func tianmuInterstitialDidPresentScreen(_ unifiedInterstitial: TianmuInterstitialAd) {
+        
+    }
+    
     /**
      *  插屏广告数据请求失败
      */
     func tianmuInterstitialFail(toLoad unifiedInterstitial: TianmuInterstitialAd, error: Error) {
         print(#function)
-        self.view.makeToast("广告加载失败")
+        self.view.makeToast("\(error)")
         interstitialAd = nil
     }
     /**
@@ -158,21 +167,17 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
      */
     func tianmuInterstitialFail(toPresent unifiedInterstitial: TianmuInterstitialAd, error: Error) {
         print(#function)
+        self.view.makeToast("当前广告展示失败：\(error)")
         interstitialAd = nil
     }
-    /**
-     *  插屏广告视图展示成功回调
-     *  插屏广告展示成功回调该函数
-     */
-    func tianmuInterstitialDidPresentScreen(_ unifiedInterstitial: TianmuInterstitialAd) {
-        
-    }
+    
     /**
      *  插屏广告曝光回调
      */
     func tianmuInterstitialWillExposure(_ unifiedInterstitial: TianmuInterstitialAd) {
         
     }
+    
     /**
      *  插屏广告点击回调
      */
@@ -186,6 +191,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     func tianmuInterstitialAdDidDismissClose(_ unifiedInterstitial: TianmuInterstitialAd) {
         self.interstitialAd = nil
     }
+
     /**
      插屏视频广告开始播放
      */
@@ -210,6 +216,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     func tianmuInterstitialAdVideoFinish(_ unifiedInterstitial: TianmuInterstitialAd){
         
     }
+    
     func tianmuInterstitialAdDidCloseLandingPage(_ unifiedInterstitial: TianmuInterstitialAd){
         
     }

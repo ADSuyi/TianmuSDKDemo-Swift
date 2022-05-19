@@ -386,7 +386,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
         adView.bringSubviewToFront(closeButton)
         closeButton.frame = CGRect.init(x:adWidth - 44, y:0, width:44, height:44);
         closeButton.setImage(UIImage.init(named: "close"), for: UIControl.State.normal)
-        // adsy_close方法为协议中方法 直接添加target即可 无需实现
+        // tianmu_close方法为协议中方法 直接添加target即可 无需实现
         closeButton.addTarget(adView, action: #selector(adView.tianmu_close), for: UIControl.Event.touchUpInside)
     }
     

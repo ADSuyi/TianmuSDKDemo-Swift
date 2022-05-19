@@ -26,6 +26,7 @@
 		BAE7214027326E8D00052A30 /* Tianmu_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7213F27326E8D00052A30 /* Tianmu_Logo.png */; };
 		FA2D56092834F88E00FDAA19 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2D56082834F88E00FDAA19 /* CoreTelephony.framework */; };
 		FA2D561328350E1000FDAA19 /* TianmuNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */; };
+		FA2D56152835ED8300FDAA19 /* ADTianmuRewardVodAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D56142835ED8300FDAA19 /* ADTianmuRewardVodAdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,7 @@
 		BAE7213F27326E8D00052A30 /* Tianmu_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tianmu_Logo.png; sourceTree = "<group>"; };
 		FA2D56082834F88E00FDAA19 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianmuNativeTableViewCell.swift; sourceTree = "<group>"; };
+		FA2D56142835ED8300FDAA19 /* ADTianmuRewardVodAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADTianmuRewardVodAdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				0C9579FD27312DEE00C5DDE8 /* TianmuInterstitialAdViewController.swift */,
 				0C9579FF27312F9500C5DDE8 /* TianmuNativeAdViewController.swift */,
 				FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */,
+				FA2D56142835ED8300FDAA19 /* ADTianmuRewardVodAdViewController.swift */,
 			);
 			path = TianmuAds;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				0C9579B627311D1500C5DDE8 /* ViewController.swift in Sources */,
 				0C9579FC27312C0600C5DDE8 /* TianmuBannderViewController.swift in Sources */,
 				0C9579E427311DC800C5DDE8 /* BaseViewController.swift in Sources */,
+				FA2D56152835ED8300FDAA19 /* ADTianmuRewardVodAdViewController.swift in Sources */,
 				0C9579F02731245C00C5DDE8 /* RootViewNavigationController.swift in Sources */,
 				0C957A0027312F9500C5DDE8 /* TianmuNativeAdViewController.swift in Sources */,
 				0C9579B227311D1500C5DDE8 /* AppDelegate.swift in Sources */,

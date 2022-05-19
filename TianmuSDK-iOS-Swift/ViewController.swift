@@ -121,6 +121,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         case 4:
             self.navigationController?.pushViewController(TianmuInterstitialAdViewController.init(), animated: true)
             break
+        case 5:
+            self.navigationController?.pushViewController(ADTianmuRewardVodAdViewController.init(), animated: true)
+            break
         default:
             break
         }
