@@ -110,7 +110,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             self.navigationController?.pushViewController(TianmuSplashViewController.init(), animated: true)
             break
         case 1:
-            self.navigationController?.pushViewController(TianmuSplashViewController.init(), animated: true)
+            var splashVc:TianmuSplashViewController?
+            splashVc = TianmuSplashViewController.init();
+            splashVc?.fullBool = true
+            self.navigationController?.pushViewController(splashVc!, animated: true)
             break
         case 2:
             self.navigationController?.pushViewController( TianmuNativeAdViewController.init(), animated: true)
