@@ -122,7 +122,6 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
             nativeAd?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100, adView: adView)
             adView.tianmu_registViews([adView])
         }
-        // TODO: 测试写法
         adViewArray.removeAll()
     }
 
@@ -323,7 +322,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
 
         // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
         let mainFrame = CGRect.init(x:17, y:0, width:adWidth - 17 * 2, height:(adWidth - 17 * 2) / 16.0 * 9);
-        if((adView.adData?.isVideoAd) != nil) {
+        if(adView.adData?.isVideoAd == true) {
             let mediaView = adView.tianmu_mediaView(forWidth: mainFrame.size.width);
             if(mediaView != nil){
                 mediaView!.frame = mainFrame;
