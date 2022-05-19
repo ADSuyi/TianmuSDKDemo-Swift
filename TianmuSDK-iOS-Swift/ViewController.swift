@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     private var mainTable:UITableView!
-    private var dataArray: Array<String> = ["开屏广告","开屏V+广告","原生信息流广告","Banner横幅广告","插屏广告"]
+    private var dataArray: Array<String> = ["开屏广告-半屏", "开屏广告-全屏", "信息流广告", "Banner横幅广告","插屏广告","激励视频"]
     private let tableViewCellID = "SimpleTableIdentifier"
     
     override func viewDidLoad() {

@@ -40,18 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
             self.initTianmuSDK()
         }
     }
-    
-   
 
     func initTianmuSDK() {
-        
         TianmuSDK.enablePersonalInformation = true
-        TianmuSDK.initWithAppId("1001004") { error in
+        TianmuSDK.initWithAppId("1001006") { error in
             if (error != nil) {
-               print("初始化失败")
+                print("初始化失败")
+            }else{
+                print("初始化成功")
             }
         }
        
+        loadSplash()
     }
     
     func loadSplash(){
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
         // Do any additional setup after loading the view.
         
         splash = TianmuSplashAd.init()
-        splash?.posId = "9106b5a8d273"
+        splash?.posId = "0b815e3cda9f"
         splash!.delegate = self
         let bgImage = UIImage.init(named: "750x1334.png")
         splash?.backgroundColor = UIColor.adsy_get(with:bgImage!, withNewSize: UIScreen.main.bounds.size)

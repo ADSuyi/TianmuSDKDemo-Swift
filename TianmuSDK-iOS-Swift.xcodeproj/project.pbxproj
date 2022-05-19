@@ -15,7 +15,6 @@
 		0C9579E427311DC800C5DDE8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9579E327311DC800C5DDE8 /* BaseViewController.swift */; };
 		0C9579E827311ED800C5DDE8 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9579E727311ED800C5DDE8 /* UIView+Toast.m */; };
 		0C9579F02731245C00C5DDE8 /* RootViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9579EF2731245C00C5DDE8 /* RootViewNavigationController.swift */; };
-		0C9579F1273124DC00C5DDE8 /* TianmuSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9579EB2731203500C5DDE8 /* TianmuSDK.xcframework */; };
 		0C9579F52731253B00C5DDE8 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9579F42731253000C5DDE8 /* libresolv.9.tbd */; };
 		0C9579F8273125E000C5DDE8 /* TianmuSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9579F7273125E000C5DDE8 /* TianmuSplashViewController.swift */; };
 		0C9579FA27312A7C00C5DDE8 /* TianmuSDKDemoTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9579F927312A7C00C5DDE8 /* TianmuSDKDemoTool.swift */; };
@@ -25,7 +24,22 @@
 		3A9029D0847E80E5BDF46E75 /* Pods_TianmuSDK_iOS_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CAB41915836824259080F7 /* Pods_TianmuSDK_iOS_Swift.framework */; };
 		BAE7213C273258A700052A30 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE7213B273258A700052A30 /* AppTrackingTransparency.framework */; };
 		BAE7214027326E8D00052A30 /* Tianmu_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7213F27326E8D00052A30 /* Tianmu_Logo.png */; };
+		FA2D56092834F88E00FDAA19 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2D56082834F88E00FDAA19 /* CoreTelephony.framework */; };
+		FA2D561328350E1000FDAA19 /* TianmuNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA2D56112834FB6E00FDAA19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C9579AE27311D1500C5DDE8 /* TianmuSDK-iOS-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TianmuSDK-iOS-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +56,6 @@
 		0C9579E527311ED700C5DDE8 /* TianmuSDK-iOS-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TianmuSDK-iOS-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		0C9579E627311ED800C5DDE8 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		0C9579E727311ED800C5DDE8 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		0C9579EB2731203500C5DDE8 /* TianmuSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TianmuSDK.xcframework; path = Pods/TianmuSDK/TianmuSDK.xcframework; sourceTree = "<group>"; };
 		0C9579EF2731245C00C5DDE8 /* RootViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewNavigationController.swift; sourceTree = "<group>"; };
 		0C9579F42731253000C5DDE8 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		0C9579F7273125E000C5DDE8 /* TianmuSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianmuSplashViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +68,8 @@
 		82DDFD9032FCA1739D8F67D8 /* Pods-TianmuSDK-iOS-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TianmuSDK-iOS-Swift.release.xcconfig"; path = "Target Support Files/Pods-TianmuSDK-iOS-Swift/Pods-TianmuSDK-iOS-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BAE7213B273258A700052A30 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		BAE7213F27326E8D00052A30 /* Tianmu_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tianmu_Logo.png; sourceTree = "<group>"; };
+		FA2D56082834F88E00FDAA19 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianmuNativeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9579F1273124DC00C5DDE8 /* TianmuSDK.xcframework in Frameworks */,
+				FA2D56092834F88E00FDAA19 /* CoreTelephony.framework in Frameworks */,
 				BAE7213C273258A700052A30 /* AppTrackingTransparency.framework in Frameworks */,
 				0C9579F52731253B00C5DDE8 /* libresolv.9.tbd in Frameworks */,
 				3A9029D0847E80E5BDF46E75 /* Pods_TianmuSDK_iOS_Swift.framework in Frameworks */,
@@ -132,6 +147,7 @@
 				0C9579FB27312C0600C5DDE8 /* TianmuBannderViewController.swift */,
 				0C9579FD27312DEE00C5DDE8 /* TianmuInterstitialAdViewController.swift */,
 				0C9579FF27312F9500C5DDE8 /* TianmuNativeAdViewController.swift */,
+				FA2D561228350E1000FDAA19 /* TianmuNativeTableViewCell.swift */,
 			);
 			path = TianmuAds;
 			sourceTree = "<group>";
@@ -161,9 +177,9 @@
 		8CB9566C3B80CEDBB39644FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA2D56082834F88E00FDAA19 /* CoreTelephony.framework */,
 				BAE7213B273258A700052A30 /* AppTrackingTransparency.framework */,
 				0C9579F42731253000C5DDE8 /* libresolv.9.tbd */,
-				0C9579EB2731203500C5DDE8 /* TianmuSDK.xcframework */,
 				60CAB41915836824259080F7 /* Pods_TianmuSDK_iOS_Swift.framework */,
 			);
 			name = Frameworks;
@@ -181,6 +197,7 @@
 				0C9579AB27311D1500C5DDE8 /* Frameworks */,
 				0C9579AC27311D1500C5DDE8 /* Resources */,
 				5531D34DEB5351E29B1E7658 /* [CP] Embed Pods Frameworks */,
+				FA2D56112834FB6E00FDAA19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +311,7 @@
 				0C9579B227311D1500C5DDE8 /* AppDelegate.swift in Sources */,
 				0C9579FA27312A7C00C5DDE8 /* TianmuSDKDemoTool.swift in Sources */,
 				0C9579FE27312DEE00C5DDE8 /* TianmuInterstitialAdViewController.swift in Sources */,
+				FA2D561328350E1000FDAA19 /* TianmuNativeTableViewCell.swift in Sources */,
 				0C9579F8273125E000C5DDE8 /* TianmuSplashViewController.swift in Sources */,
 				0C9579E827311ED800C5DDE8 /* UIView+Toast.m in Sources */,
 			);
