@@ -66,7 +66,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
         bidFailBtn.setTitle("竞价失败", for: .normal)
         bidFailBtn.setTitleColor(UIColor.black, for: .normal)
         self.view.addSubview(bidFailBtn)
-        bidFailBtn.frame = CGRect.init(x: 30, y: 280, width: UIScreen.main.bounds.size.width-60, height: 40)
+        bidFailBtn.frame = CGRect.init(x: 30, y: 340, width: UIScreen.main.bounds.size.width-60, height: 40)
         bidFailBtn.addTarget(self, action: #selector(bidFail), for: .touchUpInside)
     
         
