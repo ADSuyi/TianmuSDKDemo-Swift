@@ -41,7 +41,7 @@
 | v1.0.0   | 2021-11-04 | 首版发布 |
 | v1.1.0   | 2022-4-25 | 支持竞价功能（支持开屏，模板&自渲染信息流，插屏，激励视频） |
 | v1.2.0   | 2022-5-25 | 插屏广告支持滑一滑或摇一摇交互方式；新增个性化广告开关 |
-| v1.3.0   | 2022-6-10 |信息流、插屏广告支持多种滑动样式；开屏热区按钮调整 |
+| v1.3.0   | 2022-6-10 | 信息流、插屏广告支持多种滑动样式；开屏热区按钮调整 |
 | v1.3.1   | 2022-7-13 | 摇一摇灵敏度调整；新增支持浮窗广告；修复已知问题 |
 <div STYLE="page-break-after: always;"></div>
 
@@ -327,7 +327,7 @@ NSString *sdkVersion = [TianmuSDK getSDKVersion];
 
 /**
  *  竞胜之后调用, 需要在展示广告之前调用
- *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，需传入天目广告底价+1（单位：分）如底价与出价相同无需+1
+ *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，则竞赢上报的价格为当前广告对象的底价，如：[adView bidFloor]（单位：分）
  */
 - (void)sendWinNotificationWithPrice:(NSInteger)price;
 
@@ -727,7 +727,7 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
  *  竞胜之后调用, 需要在展示广告之前调用（必须调用否则无法展示广告）
  *
  *  @param adView 竞价成功的广告视图，该广告价格请调用[adView getBidPrice]获取，具体见TianmuExpressViewRegisterProtocol，单位：分
- *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，需传入底价+1（单位：分）;如底价与出价相同无需+1
+ *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，则竞赢上报的价格为当前广告对象的底价，如：[adView bidFloor]（单位：分）
  */
 - (void)sendWinNotificationWithAdView:(UIView<TianmuExpressViewRegisterProtocol> *)adView price:(NSInteger)price;
 
@@ -1005,7 +1005,7 @@ if(!_nativeAd) {
 
 /**
  *  竞胜之后调用, 需要在展示广告之前调用
- *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，需传入天目广告底价+1（单位：分）如底价与出价相同无需+1
+ *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，则竞赢上报的价格为当前广告对象的底价，如：[adView bidFloor]（单位：分）
  */
 - (void)sendWinNotificationWithPrice:(NSInteger)price;
 
@@ -1274,7 +1274,7 @@ OC请求插屏代码示例：
 - (void)showFromRootViewController:(UIViewController *)viewController;
 /**
  *  竞胜之后调用, 需要在展示广告之前调用
- *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，需传入天目广告底价+1（单位：分）如底价与出价相同无需+1
+ *  @param price 如天目从竞价队列中胜出，则传入竞价队列第二高价（单位：分）；如仅有天目平台竞价广告，则竞赢上报的价格为当前广告对象的底价，如：[adView bidFloor]（单位：分）
  */
 - (void)sendWinNotificationWithPrice:(NSInteger)price;
 
