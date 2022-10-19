@@ -59,12 +59,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         showBtn.addTarget(self, action: #selector(loadSplashAd), for: .touchUpInside)
     
         // 4、初始化底部视图
-        var bottomViewHeight:CGFloat = 0
-        if isIPhoneXSeries() {
-            bottomViewHeight = SCREEN_WIDTH * 0.15
-        } else {
-            bottomViewHeight = SCREEN_HEIGHT - (SCREEN_WIDTH * 960 / 640)
-        }
+        var bottomViewHeight:CGFloat = SCREEN_WIDTH * 0.15
         bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
         bottomView?.backgroundColor = UIColor.white
         
