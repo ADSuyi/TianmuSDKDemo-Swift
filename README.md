@@ -1,4 +1,4 @@
-# TianmuSDK iOS接入文档 v1.3.4.1
+# TianmuSDK iOS接入文档 v1.3.5.1
 
 
 
@@ -13,7 +13,9 @@
 | v1.3.1   | 2022-7-13  | 摇一摇灵敏度调整；新增支持浮窗广告；修复已知问题                         |
 | v1.3.2   | 2022-8-26  | 激励视频UI样式调整；摇一摇灵敏度支持动态获取；优化日志输出；修复已知问题 |
 | v1.3.3   | 2022-10-21 | 新增支持小程序调起相关业务功能；插屏的视频类型移除中途挽留页；修复已知问题 |
-| V1.3.4  | 2022-11-16 | 插屏样式调整；开屏图片渲染优化&曝光校验调整；log日志完善；                              |
+| V1.3.4   | 2022-11-16 | 插屏样式调整；开屏图片渲染优化&曝光校验调整；log日志完善；                              |
+| V1.3.5   | 2022-12-22 | 开屏、插屏新增扭一扭、转一转互动样式<br>信息流新增擦一擦互动样式<br>开屏跳过按钮位置调整<br>信息流自渲染广告支持返回天目logo图标<br>修复已知问题           |
+
 <div STYLE="page-break-after: always;"></div>
 
 
@@ -35,7 +37,7 @@
 推荐使用pod命令导入
 
 ```ruby
-pod 'TianmuSDK','~>1.3.4.1'
+pod 'TianmuSDK','~>1.3.5.1'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -794,6 +796,7 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 ```obj-c
 #import <TianmuSDK/TianmuNativeExpressAd.h>
 #import <TianmuSDK/TianmuNativeExpressView.h>
+
 if(!_nativeAd) {
    // 1、信息流广告初始化
     _nativeAd = [[TianmuNativeExpressAd alloc]initWithAdSize:CGSizeMake(UIScreen.mainScreen.bounds.size.width, 10)];
