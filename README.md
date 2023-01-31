@@ -1,9 +1,9 @@
-# TianmuSDK iOS接入文档 v1.3.5.1
+# TianmuSDK iOS接入文档 v2.0.0.1
 
 
 # 修订历史
 
-[SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
+[SDK版本更新日志](https://doc.admobile.top/ssp/pages/tmsdkchios/)
 
 
 # 1. 概述
@@ -33,7 +33,7 @@
 ## 2.1 采用cocoapods进行SDK的导入
 
 ```ruby
-pod 'TianmuSDK','~>1.3.5.1'
+pod 'TianmuSDK','~>2.0.0.1'
 ```
 
 <div STYLE="page-break-after: always;"></div>
