@@ -9,6 +9,10 @@ import UIKit
 
 
 class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDelegate, UITableViewDelegate, UITableViewDataSource {
+    func tianmuExpressAdDidPresent(_ expressAd: TianmuNativeExpressAd, adView expressAdView: UIView & TianmuExpressViewRegisterProtocol) {
+        
+    }
+    
 
     private var adViewArray: Array<UIView & TianmuExpressViewRegisterProtocol> = Array<UIView & TianmuExpressViewRegisterProtocol>.init()
     private var isNormalAd = false
@@ -256,7 +260,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
     func tianmuExpressAdClosed(_ expressAd: TianmuNativeExpressAd, adView expressAdView: UIView & TianmuExpressViewRegisterProtocol) {
         let index = items.firstIndex { view in
             if(view is TianmuNativeExpressView){
-                return (view as! TianmuNativeTableViewCell) == expressAdView
+                return (view as! TianmuNativeExpressView) == expressAdView
             }else{
                 return false
             }
@@ -311,14 +315,14 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
         // 显示logo图片（必要）
         let logoImage = UIImageView.init()
         adView.addSubview(logoImage)
-        adView.tianmu_platformLogoImageDarkMode(false) { image in
+        adView.tianmu_platformLogoImageDarkMode(false,loadImageBlock:{ image in
             if(image != nil){
                 let maxWidth = 40.0;
                 let logoHeight = maxWidth / image!.size.width * image!.size.height;
                 logoImage.frame = CGRect.init(x:adWidth - maxWidth, y:adHeight - logoHeight, width:maxWidth, height:logoHeight);
                 logoImage.image = image;
             }
-        }
+        });
 
         // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
         let mainFrame = CGRect.init(x:17, y:0, width:adWidth - 17 * 2, height:(adWidth - 17 * 2) / 16.0 * 9);
@@ -355,7 +359,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
         adLabel.backgroundColor = UIColor.adsy_color(withHexString: "#cccccc")
         adLabel.textColor = UIColor.adsy_color(withHexString: "#FFFFFF")
         adLabel.font = UIFont.adsy_PingFangLightFont(12)
-        adLabel.text = "广告"
+        adLabel.text = adView.adData?.channel
         adView.addSubview(adLabel)
         adLabel.frame = CGRect(x:17, y:(adWidth - 17 * 2) / 16.0 * 9 + 9, width:36, height:18)
         adLabel.textAlignment = .center
