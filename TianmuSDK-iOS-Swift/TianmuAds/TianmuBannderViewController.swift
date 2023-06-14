@@ -73,7 +73,7 @@ class TianmuBannderViewController: BaseViewController, TianmuBannerAdViewDelegat
 
     @objc func loadBidAd() {
         let frame = CGRect(x: 0, y: 250, width: SCREEN_WIDTH, height: SCREEN_WIDTH / (640/100.0))
-        bannerAdView = createBannerAdView(frame: frame, posId: "ew454yryrtt5667")
+        bannerAdView = createBannerAdView(frame: frame, posId: "9012784e6c3b")
         bannerAdView?.loadRequest()
     }
     
