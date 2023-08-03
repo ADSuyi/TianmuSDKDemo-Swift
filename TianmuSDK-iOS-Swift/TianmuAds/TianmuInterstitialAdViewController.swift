@@ -79,6 +79,10 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
         interstitialAd!.delegate = self
         interstitialAd!.controller = self
         interstitialAd!.posId = "682f5d1cb439"
+        // 是否开启倒计时关闭
+        // interstitialAd?.isAutoClose = true
+        // 设置倒计时关闭时长 [3~100) 区间内有效
+        // interstitialAd?.autoCloseTime = 10
         // 2、加载插屏广告
         interstitialAd?.loadData()
     }
