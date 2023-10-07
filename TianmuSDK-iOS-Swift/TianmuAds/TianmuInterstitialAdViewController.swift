@@ -110,8 +110,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
         if isNormalAd{
             return
         }
-        let otherPlatPrice : Int = 1
-        interstitialAd?.sendWinNotification(withPrice: otherPlatPrice)
+        interstitialAd?.sendWinNotification(withPrice: (interstitialAd?.bidFloor())!)
         if isReady{
             interstitialAd?.show(fromRootViewController: self)
             return

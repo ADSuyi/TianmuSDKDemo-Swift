@@ -100,8 +100,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
         if (isNormalAd){
             return;
         }
-        let otherPlatPrice = 1;
-        self.rewardVodAd?.sendWinNotification(withPrice: otherPlatPrice);
+        self.rewardVodAd?.sendWinNotification(withPrice: (rewardVodAd?.bidFloor())!);
         if (isReady) {
             rewardVodAd?.show(fromRootViewController: self)
             return;

@@ -86,8 +86,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
             self.view.makeToast("开屏广告未加载成功")
             return
         }
-        let otherPlatPrice : Int = 1
-        splash?.sendWinNotification(withPrice: otherPlatPrice)
+        splash?.sendWinNotification(withPrice: (splash?.bidFloor())!)
         splash?.show(in: UIApplication.shared.keyWindow!, withBottomView: fullBool ? nil : bottomView)
     }
     @objc func bidFail(){

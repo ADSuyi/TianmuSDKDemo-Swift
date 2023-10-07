@@ -78,7 +78,7 @@ class TianmuBannderViewController: BaseViewController, TianmuBannerAdViewDelegat
     }
     
     @objc func bidWin(){
-        bannerAdView?.sendWinNotification(withPrice: 100)
+        bannerAdView?.sendWinNotification(withPrice: (bannerAdView?.bidFloor())!)
     }
     @objc func bidFail(){
         bannerAdView?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100)

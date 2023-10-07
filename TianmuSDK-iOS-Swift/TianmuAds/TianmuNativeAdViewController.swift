@@ -114,8 +114,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
     
     @objc func bidWin(){
         for adView in adViewArray {
-            let otherPlatPrice = 1
-            nativeAd?.sendWinNotification(withAdView: adView, price: otherPlatPrice)
+            nativeAd?.sendWinNotification(withAdView: adView, price: adView.bidFloor)
             adView.tianmu_registViews([adView])
         }
         adViewArray.removeAll()
