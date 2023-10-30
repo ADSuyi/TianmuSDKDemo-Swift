@@ -126,7 +126,9 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
                 adView.tianmu_registViews([adView])
             }
             adViewArray.removeAll()
+            return;
         }
+        self.view.makeToast("广告未准备好")
     }
     
     @objc func bidFail(){
@@ -140,7 +142,9 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
                 adView.tianmu_registViews([adView])
             }
             adViewArray.removeAll()
+            return;
         }
+        self.view.makeToast("广告未准备好")
     }
 
     func setUI(){
