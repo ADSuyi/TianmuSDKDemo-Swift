@@ -82,6 +82,9 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         splash?.load()
     }
     @objc func bidWin(){
+        if !isHeadBidding {
+            self.view.makeToast("当前广告不是竞价广告")
+        }
         if !isSucceed || splash == nil{
             self.view.makeToast("开屏广告未加载成功")
             return
@@ -90,6 +93,9 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         splash?.show(in: UIApplication.shared.keyWindow!, withBottomView: fullBool ? nil : bottomView)
     }
     @objc func bidFail(){
+        if !isHeadBidding {
+            self.view.makeToast("当前广告不是竞价广告")
+        }
         if !isSucceed || splash == nil{
             self.view.makeToast("开屏广告未加载成功")
             return
@@ -101,6 +107,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
     }
     @objc func loadSplashAd() {
         isHeadBidding = false
+        isSucceed = false
         splash = TianmuSplashAd.init()
         splash?.posId = "0b815e3cda9f"
         splash!.delegate = self

@@ -16,6 +16,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
 
     private var adViewArray: Array<UIView & TianmuExpressViewRegisterProtocol> = Array<UIView & TianmuExpressViewRegisterProtocol>.init()
     private var isNormalAd = false
+    private var isReady = false
     
     private var nativeAd: TianmuNativeExpressAd?
     private var tableView: UITableView?
@@ -102,30 +103,44 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
     
     @objc func loadNomarlAd(){
         isNormalAd = true
+        isReady = false
         nativeAd?.posId = self.posId
         nativeAd?.load(withCount: 3)
     }
     
     @objc func loadBidAd(){
         isNormalAd = false
+        isReady = false
         nativeAd?.posId = self.bidPosId
         nativeAd?.load(withCount: 3)
     }
     
     @objc func bidWin(){
-        for adView in adViewArray {
-            nativeAd?.sendWinNotification(withAdView: adView, price: adView.bidFloor)
-            adView.tianmu_registViews([adView])
+        if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
+            return;
         }
-        adViewArray.removeAll()
+        if isReady{
+            for adView in adViewArray {
+                nativeAd?.sendWinNotification(withAdView: adView, price: adView.bidFloor)
+                adView.tianmu_registViews([adView])
+            }
+            adViewArray.removeAll()
+        }
     }
     
     @objc func bidFail(){
-        for adView in adViewArray {
-            nativeAd?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100, adView: adView)
-            adView.tianmu_registViews([adView])
+        if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
+            return;
         }
-        adViewArray.removeAll()
+        if isReady{
+            for adView in adViewArray {
+                nativeAd?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100, adView: adView)
+                adView.tianmu_registViews([adView])
+            }
+            adViewArray.removeAll()
+        }
     }
 
     func setUI(){
@@ -218,7 +233,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
     
     // 模板信息流广告加载成功
     func tianmuExpressAdSucceed(toLoad expressAd: TianmuNativeExpressAd, views: [UIView & TianmuExpressViewRegisterProtocol]) {
-        
+        isReady = true
         for adView in views {
             if(adView.renderType == .native){
                 self.setUpUnifiedTopImageNativeAdView(adView:adView)

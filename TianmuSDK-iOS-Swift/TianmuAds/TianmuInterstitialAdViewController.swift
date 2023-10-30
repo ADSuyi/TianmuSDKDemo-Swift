@@ -74,6 +74,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     
     @objc func loadInterstitialAd() {
         isNormalAd = true;
+        isReady = false
         // 1、初始化插屏广告对象
         interstitialAd = TianmuInterstitialAd.init()
         interstitialAd!.delegate = self
@@ -97,6 +98,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     
     @objc func loadBidAd(){
         isNormalAd = false
+        isReady = false
         // 1、初始化插屏广告对象
         interstitialAd = TianmuInterstitialAd.init()
         interstitialAd!.delegate = self
@@ -107,11 +109,12 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     }
     
     @objc func bidWin(){
-        if isNormalAd{
-            return
+        if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
+            return;
         }
-        interstitialAd?.sendWinNotification(withPrice: (interstitialAd?.bidFloor())!)
         if isReady{
+            interstitialAd?.sendWinNotification(withPrice: (interstitialAd?.bidFloor())!)
             interstitialAd?.show(fromRootViewController: self)
             return
         }
@@ -119,11 +122,12 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     }
     
     @objc func bidFail(){
-        if isNormalAd{
-            return
+        if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
+            return;
         }
-        interstitialAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
         if isReady{
+            interstitialAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
             interstitialAd?.show(fromRootViewController: self)
             return
         }

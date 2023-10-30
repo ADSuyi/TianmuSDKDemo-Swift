@@ -10,6 +10,8 @@ import UIKit
 class TianmuBannderViewController: BaseViewController, TianmuBannerAdViewDelegate {
     
     var bannerAdView : TianmuBannerAdView?
+    var isHeadBidding: Bool = false
+    var isSucceed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,21 +68,40 @@ class TianmuBannderViewController: BaseViewController, TianmuBannerAdViewDelegat
     }
    
     @objc func loadNomarlAd() {
+        isHeadBidding = false
+        isSucceed = false
         let frame = CGRect(x: 0, y: 250, width: SCREEN_WIDTH, height: SCREEN_WIDTH / (640/100.0))
         bannerAdView = createBannerAdView(frame: frame, posId: "e592f0da3b71")
         bannerAdView?.loadRequest()
     }
 
     @objc func loadBidAd() {
+        isHeadBidding = true
+        isSucceed = true
         let frame = CGRect(x: 0, y: 250, width: SCREEN_WIDTH, height: SCREEN_WIDTH / (640/100.0))
         bannerAdView = createBannerAdView(frame: frame, posId: "9012784e6c3b")
         bannerAdView?.loadRequest()
     }
     
     @objc func bidWin(){
+        if !isHeadBidding {
+            self.view.makeToast("当前广告不是竞价广告")
+        }
+        if !isSucceed || bannerAdView == nil{
+            self.view.makeToast("开屏广告未加载成功")
+            return
+        }
         bannerAdView?.sendWinNotification(withPrice: (bannerAdView?.bidFloor())!)
+        
     }
     @objc func bidFail(){
+        if !isHeadBidding {
+            self.view.makeToast("当前广告不是竞价广告")
+        }
+        if !isSucceed || bannerAdView == nil{
+            self.view.makeToast("开屏广告未加载成功")
+            return
+        }
         bannerAdView?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100)
     }
     
@@ -98,6 +119,10 @@ class TianmuBannderViewController: BaseViewController, TianmuBannerAdViewDelegat
      */
     func tianmuBannerSuccessLoad(_ tianmuBannerView: TianmuBannerAdView) {
         // 重要‼️ 如果是竞价广告位，且支持自刷新，需要处理自刷新的竟赢上报
+        isSucceed = true
+        if isHeadBidding {
+            self.view.makeToast("当前广告价格： \(tianmuBannerView.bidPrice())")
+        }
     }
     
     /**

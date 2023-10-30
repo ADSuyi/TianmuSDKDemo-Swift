@@ -71,7 +71,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
     
     @objc func loadRewardVodAd(){
         isNormalAd = true
-        
+        isReady = false
         rewardVodAd = TianmuRewardVodAd.init()
         rewardVodAd!.delegate = self
         rewardVodAd!.controller = self
@@ -88,7 +88,8 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
     }
 
     @objc func loadBidAd(){
-        isNormalAd = false;
+        isNormalAd = false
+        isReady = false
         rewardVodAd = TianmuRewardVodAd.init()
         rewardVodAd?.delegate = self
         rewardVodAd?.controller = self
@@ -98,10 +99,11 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
 
     @objc func bidWin(){
         if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        self.rewardVodAd?.sendWinNotification(withPrice: (rewardVodAd?.bidFloor())!);
         if (isReady) {
+            self.rewardVodAd?.sendWinNotification(withPrice: (rewardVodAd?.bidFloor())!);
             rewardVodAd?.show(fromRootViewController: self)
             return;
         }
@@ -110,10 +112,11 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
 
     @objc func bidFail(){
         if (isNormalAd){
+            self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        self.rewardVodAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
         if (isReady) {
+            self.rewardVodAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
             self.rewardVodAd?.show(fromRootViewController: self)
             return;
         }
