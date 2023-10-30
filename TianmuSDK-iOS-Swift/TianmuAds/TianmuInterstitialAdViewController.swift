@@ -89,7 +89,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
     }
     
     @objc func showInterstitialAd() {
-        if isReady  {
+        if isReady && (interstitialAd != nil) {
             interstitialAd?.show(fromRootViewController: self)
         }else {
             self.view.makeToast("插屏广告未准备完成")
@@ -113,7 +113,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if isReady{
+        if isReady && (interstitialAd != nil) {
             interstitialAd?.sendWinNotification(withPrice: (interstitialAd?.bidFloor())!)
             interstitialAd?.show(fromRootViewController: self)
             return
@@ -126,7 +126,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if isReady{
+        if isReady && (interstitialAd != nil){
             interstitialAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
             interstitialAd?.show(fromRootViewController: self)
             return

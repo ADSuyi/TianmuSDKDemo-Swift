@@ -120,7 +120,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if isReady{
+        if isReady && (nativeAd != nil){
             for adView in adViewArray {
                 nativeAd?.sendWinNotification(withAdView: adView, price: adView.bidFloor)
                 adView.tianmu_registViews([adView])
@@ -136,7 +136,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if isReady{
+        if isReady && (nativeAd != nil){
             for adView in adViewArray {
                 nativeAd?.sendWinFailNotificationReason(TianmuAdBiddingLossReason.other, winnerPirce: 100, adView: adView)
                 adView.tianmu_registViews([adView])

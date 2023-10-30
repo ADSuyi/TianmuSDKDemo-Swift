@@ -102,7 +102,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if (isReady) {
+        if (isReady && (self.rewardVodAd != nil)) {
             self.rewardVodAd?.sendWinNotification(withPrice: (rewardVodAd?.bidFloor())!);
             rewardVodAd?.show(fromRootViewController: self)
             return;
@@ -115,7 +115,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
             self.view.makeToast("当前广告不是竞价广告")
             return;
         }
-        if (isReady) {
+        if (isReady && (self.rewardVodAd != nil)) {
             self.rewardVodAd?.sendWinFailNotificationReason(.lowPrice, winnerPirce: 1000)
             self.rewardVodAd?.show(fromRootViewController: self)
             return;
