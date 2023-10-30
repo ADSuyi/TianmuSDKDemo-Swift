@@ -15,7 +15,7 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
     
 
     private var adViewArray: Array<UIView & TianmuExpressViewRegisterProtocol> = Array<UIView & TianmuExpressViewRegisterProtocol>.init()
-    private var isNormalAd = false
+    private var isNormalAd = true
     private var isReady = false
     
     private var nativeAd: TianmuNativeExpressAd?

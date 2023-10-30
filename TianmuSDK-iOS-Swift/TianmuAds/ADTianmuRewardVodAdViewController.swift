@@ -11,7 +11,7 @@ class ADTianmuRewardVodAdViewController: BaseViewController, TianmuRewardVodAdDe
 
     var rewardVodAd: TianmuRewardVodAd?
     var isReady:Bool = false
-    var isNormalAd:Bool = false
+    var isNormalAd:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

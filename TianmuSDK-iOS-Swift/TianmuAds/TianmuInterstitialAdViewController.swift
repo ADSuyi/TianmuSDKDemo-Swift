@@ -11,7 +11,7 @@ class TianmuInterstitialAdViewController: BaseViewController, TianmuInterstitial
 
     var interstitialAd: TianmuInterstitialAd?
     var isReady:Bool = false
-    var isNormalAd:Bool = false
+    var isNormalAd:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
