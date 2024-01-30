@@ -59,7 +59,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         showBtn.addTarget(self, action: #selector(loadSplashAd), for: .touchUpInside)
     
         // 4、初始化底部视图
-        var bottomViewHeight:CGFloat = SCREEN_WIDTH * 0.15
+        var bottomViewHeight:CGFloat = SCREEN_HEIGHT * 0.15
         bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
         bottomView?.backgroundColor = UIColor.white
         
@@ -79,7 +79,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         splash!.delegate = self
         let bgImage = UIImage.init(named: "750x1334.png")
         splash?.backgroundColor = UIColor.adsy_get(with:bgImage!, withNewSize: UIScreen.main.bounds.size)
-        splash?.load()
+        splash?.load(withBottomView: fullBool ? nil : bottomView)
     }
     @objc func bidWin(){
         if !isHeadBidding {

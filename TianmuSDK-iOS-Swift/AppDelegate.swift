@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
     func loadSplash(){
         
         // 4、初始化底部视图
-        var bottomViewHeight:CGFloat = SCREEN_WIDTH * 0.15
+        var bottomViewHeight:CGFloat = SCREEN_HEIGHT * 0.15
         let bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
         bottomView.backgroundColor = UIColor.white
         
