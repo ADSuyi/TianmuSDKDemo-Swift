@@ -12,7 +12,9 @@ class TianmuNativeTableViewCell: UITableViewCell {
     private var adView:UIView?
     
     func setAdView(adView: UIView?){
-        self.adView?.removeFromSuperview()
+        for view in self.contentView.subviews {
+            view.removeFromSuperview()
+        }
         
         self.adView = adView
         
