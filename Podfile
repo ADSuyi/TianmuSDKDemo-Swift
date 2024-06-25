@@ -7,6 +7,6 @@ target 'TianmuSDK-iOS-Swift' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'MJRefresh'
-  pod 'TianmuSDK', '~> 2.2.1.3'
+  pod 'TianmuSDK', '~> 2.2.3.1'
 
 end
