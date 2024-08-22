@@ -205,13 +205,6 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
         return 44
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if(cell is TianmuNativeTableViewCell){
-            (cell as! TianmuNativeTableViewCell).setAdView(adView: nil)
-        }
-    }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
