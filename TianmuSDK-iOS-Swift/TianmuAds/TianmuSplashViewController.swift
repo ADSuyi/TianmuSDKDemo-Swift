@@ -73,7 +73,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
     }
     @objc func loadBidAd(){
         isHeadBidding = true
-        isSucceed = true
+        isSucceed = false
         splash = TianmuSplashAd.init()
         splash?.posId = "e815b3c6d02a"
         splash!.delegate = self
@@ -134,7 +134,6 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
      *  开屏广告展示失败
      */
     func tianmuSplashAdFailToShow(_ splashAd: TianmuSplashAd) {
-        isSucceed = false
         self.view.makeToast("开屏广告展示失败")
     }
     /**
@@ -155,26 +154,24 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
      */
     func tianmuSplashAdRenderFaild(_ splashAd: TianmuSplashAd, withError error: Error) {
         self.view.makeToast("开屏广告渲染失败")
-        isSucceed = false
     }
     /**
      *  开屏广告点击回调
      */
     func tianmuSplashAdClicked(_ splashAd: TianmuSplashAd) {
-        isSucceed = false
+        
     }
     /**
      *  开屏广告关闭回调
      */
     func tianmuSplashAdClosed(_ splashAd: TianmuSplashAd) {
-        isSucceed = false
         splash = nil
     }
     /**
      *  开屏广告倒计时结束回调
      */
     func tianmuSplashAdCountdown(_ splashAd: TianmuSplashAd) {
-        isSucceed = false
+        
     }
     /**
      *  开屏广告点击跳过回调
@@ -182,8 +179,10 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
     func tianmuSplashAdSkiped(_ splashAd: TianmuSplashAd) {
         
     }
+    /**
+     *  开屏广告关闭落地页回调
+     */
     func tianmuSplashAdCloseLandingPage(_ splashAd: TianmuSplashAd) {
-        isSucceed = false
         splash = nil
     }
 }

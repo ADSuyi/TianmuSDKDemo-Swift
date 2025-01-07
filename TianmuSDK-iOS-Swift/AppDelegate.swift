@@ -55,7 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
     }
     
     func loadSplash(){
-        
+        if splash != nil {
+            return
+        }
         // 4、初始化底部视图
         var bottomViewHeight:CGFloat = SCREEN_HEIGHT * 0.15
         let bottomView = UIView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT - bottomViewHeight, width: SCREEN_WIDTH, height: bottomViewHeight))
@@ -94,10 +96,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
     }
 
     func tianmuSplashAdClicked(_ splashAd: TianmuSplashAd) {
-        splash = nil
+        
     }
     
     func tianmuSplashAdClosed(_ splashAd: TianmuSplashAd) {
+        splash = nil
+    }
+    
+    func tianmuSplashAdCloseLandingPage(_ splashAd: TianmuSplashAd) {
         splash = nil
     }
 
