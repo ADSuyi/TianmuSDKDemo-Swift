@@ -90,7 +90,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
             return
         }
         splash?.sendWinNotification(withPrice: (splash?.bidFloor())!)
-        splash?.show(in: UIApplication.shared.keyWindow!, withBottomView: fullBool ? nil : bottomView)
+        splash?.show(in: UIApplication.shared.keyWindow!)
     }
     @objc func bidFail(){
         if !isHeadBidding {
@@ -102,8 +102,8 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
         }
         let otherPlatPrice : Int = 100
         splash?.sendWinFailNotificationReason(.lowPrice, winnerPirce: otherPlatPrice)
-       
-        splash?.loadAndShow(in: UIApplication.shared.keyWindow!, withBottomView: bottomView)
+        
+        splash?.show(in: UIApplication.shared.keyWindow!)
     }
     @objc func loadSplashAd() {
         isHeadBidding = false
