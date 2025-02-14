@@ -154,6 +154,7 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
      */
     func tianmuSplashAdRenderFaild(_ splashAd: TianmuSplashAd, withError error: Error) {
         self.view.makeToast("开屏广告渲染失败")
+        isSucceed = false
     }
     /**
      *  开屏广告点击回调
