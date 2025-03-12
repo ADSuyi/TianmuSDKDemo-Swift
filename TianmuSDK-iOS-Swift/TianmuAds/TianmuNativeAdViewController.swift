@@ -348,7 +348,10 @@ class TianmuNativeAdViewController: BaseViewController, TianmuNativeExpressAdDel
             imageView.backgroundColor = UIColor.adsy_color(withHexString: "#cccccc")
             adView.addSubview(imageView)
             imageView.frame = mainFrame;
-            let urlStr:String = adView.adData?.imageUrl ?? "";
+            var urlStr:String = adView.adData?.imageUrl ?? "";
+            if urlStr.isEmpty {
+                urlStr = adView.adData?.imageUrlArray.first ?? ""
+            }
             if(urlStr.count > 0) {
                 DispatchQueue.global().async {
                     let url = URL.init(string: urlStr)
