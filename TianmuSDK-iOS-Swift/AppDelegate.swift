@@ -104,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TianmuSplashAdDelegate {
     }
     
     func tianmuSplashAdCloseLandingPage(_ splashAd: TianmuSplashAd) {
-        splash = nil
+        
     }
 
     

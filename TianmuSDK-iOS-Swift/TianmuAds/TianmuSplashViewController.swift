@@ -184,6 +184,6 @@ class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
      *  开屏广告关闭落地页回调
      */
     func tianmuSplashAdCloseLandingPage(_ splashAd: TianmuSplashAd) {
-        splash = nil
+        
     }
 }
