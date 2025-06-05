@@ -8,7 +8,6 @@
 import UIKit
 
 class TianmuSplashViewController: BaseViewController, TianmuSplashAdDelegate {
-
     var splash: TianmuSplashAd?
     var bottomView: UIView?
     var isHeadBidding: Bool = false
