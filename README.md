@@ -72,7 +72,6 @@ pod 'TianmuSDK','~>3.0.0.1'
 4. Info.plist 添加定位权限字段
     ```obj-c
     NSLocationWhenInUseUsageDescription
-    NSLocationAlwaysAndWhenInUseUsageDeion
     ```
 5. Info.plist推荐设置白名单，可提高广告收益
     ```obj-c
